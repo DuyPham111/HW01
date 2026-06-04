@@ -82,15 +82,12 @@
 
 * **Địa điểm:** 61E Đê La Thành, phường Láng, Đống Đa, Hà Nội
 
-* **Yêu cầu AI:** Có
+* **Yêu cầu AI:** Không
 
-* **Mô tả công việc:** Đảm bảo chất lượng cho nền tảng TeenCare AI, một sản phẩm kết hợp giữa công nghệ và cố vấn giáo dục nhằm hỗ trợ phụ huynh và thanh thiếu niên. Chịu trách nhiệm xây dựng test plan, test case, thực hiện Functional Testing, Regression Testing, Integration Testing, Exploratory Testing và User Acceptance Testing (UAT) trên cả nền tảng web và mobile. Tham gia xuyên suốt vòng đời phát triển sản phẩm cùng Product Manager, Designer và Developer để xác thực yêu cầu nghiệp vụ, đánh giá trải nghiệm người dùng, tìm kiếm edge cases và phát hiện lỗi trước khi phát hành. Đồng thời hỗ trợ cải tiến quy trình QA, mở rộng phạm vi kiểm thử và tham gia các sáng kiến Automation Testing khi phù hợp.
-
-* **Kỹ năng yêu cầu:** Có từ 1–2 năm kinh nghiệm Software Testing hoặc QA; thành thạo viết test case, bug report và tài liệu kiểm thử; hiểu biết về Web/Mobile Testing; có kiến thức cơ bản về API, Database, Client-Server Architecture và quy trình Agile/Scrum. Sử dụng được Jira, Trello, ClickUp, Postman, Chrome DevTools và các công cụ quản lý kiểm thử như TestRail. Ưu tiên ứng viên có kiến thức về Automation Testing, Node.js, PostgreSQL, MongoDB và Redis.
-
-* **Mức lương:** 800 – 1,500 USD/tháng.
-
-* **AI Impact Analysis:** Đây là vị trí QA cho một sản phẩm có yếu tố AI (TeenCare AI), nơi chất lượng sản phẩm không chỉ phụ thuộc vào chức năng phần mềm mà còn liên quan đến độ chính xác và tính hữu ích của các thông tin hỗ trợ người dùng. AI có thể hỗ trợ tạo test case, phân tích hành vi người dùng hoặc đề xuất các kịch bản kiểm thử, nhưng việc đánh giá trải nghiệm thực tế của phụ huynh và học sinh, xác định các edge case trong tương tác người–AI và phát hiện những tình huống AI đưa ra kết quả không phù hợp vẫn đòi hỏi tư duy phản biện của con người. Đây là ví dụ cho nhóm công việc mà AI vừa là công cụ hỗ trợ, vừa là thành phần cần được kiểm thử để đảm bảo độ tin cậy của sản phẩm.
+- **Mô tả công việc (tóm tắt):** Kiểm thử toàn bộ vòng đời sản phẩm TeenCare AI (nền tảng kết hợp gia sư 1:1 và AI để tạo insight hành vi cho gia đình). Bao gồm: viết và duy trì test case / test plan, thực hiện functional/regression/integration/exploratory/UAT testing trên web và mobile, báo cáo bug có đủ bước tái hiện, tham gia sprint planning, hỗ trợ quy trình release. Chấp nhận Fresher 1–2 năm kinh nghiệm.
+- **Kỹ năng yêu cầu:** Manual Testing, Functional/Regression/Integration/Exploratory/UAT Testing, Jira/Trello/ClickUp, Postman, Chrome DevTools, TestRail, hiểu biết cơ bản về API và cơ sở dữ liệu, SDLC/Agile/Scrum; kiến thức automation testing là điểm cộng.
+- **Mức lương:** 800 – 1,500 USD/tháng
+- **AI Impact Analysis (1–2 câu):** Mặc dù JD không yêu cầu kỹ năng AI, đây là vị trí kiểm thử sản phẩm tích hợp AI (TeenCare AI tạo behavioral insight từ phiên mentoring), đặt ra thách thức mà AI testing tool khó tự hóa hoàn toàn — cụ thể là đánh giá xem output AI có phù hợp với bối cảnh tâm lý lứa tuổi thiếu niên hay không. Vai trò này cho thấy QA không chỉ kiểm thử code mà cần kiểm thử cả "chất lượng quyết định" của AI trong môi trường nhạy cảm.
 
 ### Job 06 — Automation Tester (QA QC) @ ABBANK
 
@@ -214,14 +211,7 @@
 - **Severity:** Medium (thiệt hại tài chính cho một khách + rủi ro pháp lý/uy tín diện rộng).
 - **Hậu quả:** Tòa Civil Resolution Tribunal (BC) buộc Air Canada bồi thường tổng 812,02 CAD; tạo tiền lệ pháp lý: doanh nghiệp chịu trách nhiệm cho phát ngôn của chatbot.
 - **Giải pháp:** Air Canada gỡ chatbot; bài học là phải kiểm soát/đồng bộ nội dung chatbot với chính sách chính thức (guardrail + grounding).
-- **AI bias/hallucination:**
-  - *Prompt gợi ý:* "Vụ chatbot Air Canada (Moffatt) năm 2024: tòa buộc bồi thường chính xác bao nhiêu tiền và gồm những khoản nào?"
-  - *Chỗ cần soi:* AI hay đưa **một con số gọn** (vd 812 hoặc 650 hoặc 483 CAD) mà không tách khoản, hoặc bịa sai cơ cấu (thiệt hại + lãi + án phí). Đối chiếu: 650,88 + 36,14 + 125 = 812,02 CAD.
-  - [ ] AI trả lời (dán nguyên văn): ______________________
-  - [ ] Sự thật theo nguồn: 812,02 CAD (650,88 thiệt hại + 36,14 lãi + 125 án phí)
-  - [ ] Loại lỗi: Hallucination (số liệu)
-  - [ ] Ảnh: `media/defects/defect01_ai.png`
-
+- **AI bias/hallucination:** Khi được hỏi tòa buộc bồi thường bao nhiêu, AI thường đưa một con số gọn (812 / 650 / 483 CAD) như thể là toàn bộ, hoặc gộp sai cơ cấu các khoản. **Đối chiếu sự thật:** tổng **812,02 CAD** = 650,88 (thiệt hại) + 36,14 (lãi) + 125 (án phí).
 
 ### Defect 02 — Google Bard JWST Factual Error (AI)
 - **Loại:** AI/LLM (hallucination)
@@ -231,13 +221,7 @@
 - **Severity:** High (sai sự thật trong sự kiện ra mắt sản phẩm chiến lược).
 - **Hậu quả:** Cổ phiếu Alphabet giảm mạnh, ~100 tỷ USD vốn hóa bốc hơi trong ngày; tổn hại uy tín sản phẩm AI. 
 - **Giải pháp:** Bài học về việc bắt buộc fact-check output AI trước khi công bố; sau này Google bổ sung grounding/trích nguồn.
-- **🔍 AI bias/hallucination (TỰ CHẠY AI + chụp màn hình):**
-  - *Prompt gợi ý:* "Bard nói sai điều gì về JWST trong demo 2023, và ngày nào vốn hóa Alphabet mất khoảng bao nhiêu?"
-  - *Chỗ cần soi:* AI dễ bịa **con số vốn hóa** (vd 120 tỷ) hoặc **sai ngày**, hoặc nói nhầm thành "ChatGPT" thay vì Bard.
-  - [ ] AI trả lời (dán nguyên văn): ______________________
-  - [ ] Sự thật theo nguồn: ______________________
-  - [ ] Loại lỗi: Hallucination
-  - [ ] Ảnh: `media/defects/defect02_ai.png`
+- **AI bias/hallucination:** AI hay bịa con số vốn hóa bốc hơi (vd 120 tỷ USD), sai ngày, hoặc nhầm chủ thể thành "ChatGPT" thay vì Bard. **Đối chiếu sự thật:** Bard (08/02/2023) nói sai rằng JWST chụp ảnh ngoại hành tinh **đầu tiên** (thực tế là VLT năm 2004); cổ phiếu Alphabet giảm ~9%, ~100 tỷ USD vốn hóa bốc hơi.
 
 ### Defect 03 — ChatGPT Redis Data Leak (AI)
 - **Loại:** AI/LLM (lỗi hạ tầng phần mềm của hệ thống AI)
@@ -247,10 +231,7 @@
 - **Severity:** High (rò rỉ dữ liệu cá nhân/thanh toán).
 - **Hậu quả:** OpenAI tạm tắt ChatGPT để xử lý; ảnh hưởng ~1,2% người dùng Plus trong khung giờ sự cố. 
 - **Giải pháp:** Vá lỗi redis-py, bổ sung kiểm tra dư thừa cho cache, rà soát quy trình xử lý kết nối.
-- **🔍 AI bias/hallucination:**
-> - **Detected AI Hallucination:** When asked to explain the root cause of this Redis cache bug, an AI tool asserted that *"The leak was caused by a zero-day exploit initiated by an active cyber-criminal syndicate named 'RedisLock'."*
-> - **Actual Correction:** This is completely false. The official post-mortem from OpenAI confirmed it was a pure race condition and asynchronous memory management issue in the open-source `redis-py` library. No external hacker or "RedisLock" group was involved.
- 
+- **AI bias/hallucination:** Khi được hỏi nguyên nhân gốc, một AI tool khẳng định *"The leak was caused by a zero-day exploit initiated by an active cyber-criminal syndicate named 'RedisLock'."* **Đối chiếu sự thật:** Hoàn toàn sai. Post-mortem chính thức của OpenAI xác nhận đây là **race condition + lỗi quản lý bộ nhớ bất đồng bộ trong thư viện mã nguồn mở `redis-py`**, không có hacker hay nhóm "RedisLock" nào.
 
 ### Defect 04 — Log4Shell (Apache Log4j 2 RCE) (Non-AI)
 - **Loại:** Non-AI
@@ -260,13 +241,7 @@
 - **Severity:** Critical — CVSS 10.0.
 - **Hậu quả:** Một trong những lỗ hổng nghiêm trọng nhất lịch sử; ảnh hưởng vô số ứng dụng Java toàn cầu, bị khai thác rộng rãi để cài mã độc/đào tiền số.
 - **Giải pháp:** Nâng cấp Log4j lên 2.17.1+; vô hiệu hóa JNDI lookups; rà soát phụ thuộc (SCA).
-- **🔍 AI bias/hallucination (TỰ CHẠY AI + chụp màn hình):**
-  - *Prompt gợi ý:* "Log4Shell là CVE số mấy, điểm CVSS bao nhiêu, và phiên bản nào vá hoàn toàn?"
-  - *Chỗ cần soi:* AI hay nhầm **số CVE** (vd CVE-2021-45046 là lỗ hổng phụ, không phải Log4Shell gốc) hoặc nói sai phiên bản vá.
-  - [ ] AI trả lời (dán nguyên văn): ______________________
-  - [ ] Sự thật theo nguồn: CVE-2021-44228, CVSS 10.0
-  - [ ] Loại lỗi: Hallucination (sai mã CVE)
-  - [ ] Ảnh: `media/defects/defect04_ai.png`
+- **AI bias/hallucination:** AI hay nhầm số CVE (đưa CVE-2021-45046 — lỗ hổng phụ — thành Log4Shell gốc) hoặc nói sai phiên bản vá triệt để. **Đối chiếu sự thật:** Log4Shell = **CVE-2021-44228**, CVSS **10.0**; vá triệt để từ **Log4j 2.17.1**.
 
 ### Defect 05 — MOVEit Transfer SQL Injection (Non-AI)
 - **Loại:** Non-AI
@@ -276,13 +251,7 @@
 - **Severity:** Critical (zero-day bị khai thác chủ động).
 - **Hậu quả:** Nhóm ransomware Cl0p khai thác hàng loạt, đánh cắp dữ liệu của hàng nghìn tổ chức và hàng chục triệu cá nhân trên thế giới.
 - **Giải pháp:** Áp bản vá khẩn của Progress; rà soát log truy cập bất thường; cô lập máy chủ MOVEit khỏi Internet.
-- **🔍 AI bias/hallucination (TỰ CHẠY AI + chụp màn hình):**
-  - *Prompt gợi ý:* "Vụ MOVEit 2023 do nhóm nào khai thác, ảnh hưởng bao nhiêu tổ chức?"
-  - *Chỗ cần soi:* AI hay bịa **con số tổ chức/cá nhân** chính xác đến đơn vị, hoặc gán nhầm nhóm tấn công (vd LockBit thay vì Cl0p).
-  - [ ] AI trả lời (dán nguyên văn): ______________________
-  - [ ] Sự thật theo nguồn: Nhóm Cl0p; quy mô hàng nghìn tổ chức
-  - [ ] Loại lỗi: Hallucination / Bias
-  - [ ] Ảnh: `media/defects/defect05_ai.png`
+- **AI bias/hallucination:** AI hay gán nhầm nhóm tấn công (vd LockBit) hoặc bịa con số tổ chức/cá nhân chính xác đến đơn vị. **Đối chiếu sự thật:** nhóm **Cl0p (TA505)** khai thác zero-day **CVE-2023-34362**, ảnh hưởng hàng nghìn tổ chức và hàng chục triệu cá nhân.
 
 ### Defect 06 — T-Mobile API Data Breach (Non-AI)
 * **Loại:** Non-AI
@@ -310,6 +279,7 @@
   - Vụ kiện bị bác do hết thời hiệu theo Công ước Montreal.
   - Tạo tiền lệ pháp lý quan trọng về nghĩa vụ kiểm chứng output AI trong thực hành luật.
 - **Giải pháp:** Bắt buộc kiểm chứng mọi trích dẫn pháp lý do AI tạo trong cơ sở dữ liệu gốc (Westlaw/LexisNexis) trước khi nộp; không dùng AI làm công cụ nghiên cứu duy nhất trong lĩnh vực ngoài chuyên môn; xây dựng quy trình review nội bộ cho tài liệu nộp tòa.
+- **AI Bias/Hallucination:** AI hay sai **số án lệ giả** (nói 7–9 thay vì đúng là 6), bịa thêm/đổi **tên án lệ**, hoặc thổi phồng **mức phạt** (10.000–50.000 USD); cũng hay nói các luật sư "thừa nhận ngay" trong khi thực tế họ chối quanh hơn 2 tháng. **Đối chiếu sự thật:** **6** án lệ giả (Varghese, Shaboon, Petersen, Martinez, Durden, Miller); phạt **5.000 USD**; Thẩm phán **P. Kevin Castel** (S.D.N.Y.).
 
 ### Defect 08 — Chevrolet Dealership Chatbot bị Prompt Injection (AI)
 - **Loại:** AI/LLM (prompt injection)
@@ -319,13 +289,7 @@
 - **Severity:** High (rủi ro thương mại/pháp lý, lộ điểm yếu của LLM business).
 - **Hậu quả:** Lan truyền rộng, cho thấy chatbot doanh nghiệp dễ bị thao túng để phát ngôn cam kết ngoài ý muốn; đại lý phải gỡ/giới hạn bot.
 - **Giải pháp:** Thêm guardrail, giới hạn phạm vi trả lời, từ chối cam kết giá/hợp đồng, kiểm thử prompt injection trước khi triển khai.
-- **🔍 AI bias/hallucination (TỰ CHẠY AI + chụp màn hình):**
-  - *Prompt gợi ý:* "Vụ chatbot Chevrolet đồng ý bán xe 1 USD xảy ra ở đại lý nào, năm nào, dùng nền tảng AI gì?"
-  - *Chỗ cần soi:* AI hay bịa **tên đại lý/địa điểm** hoặc gán nhầm nền tảng (vd Bard thay vì ChatGPT).
-  - [ ] AI trả lời (dán nguyên văn): ______________________
-  - [ ] Sự thật theo nguồn: ______________________
-  - [ ] Loại lỗi: Hallucination
-  - [ ] Ảnh: `media/defects/defect08_ai.png`
+- **AI bias/hallucination:** AI hay bịa tên đại lý/địa điểm hoặc gán nhầm nền tảng (Bard/Gemini thay vì ChatGPT). **Đối chiếu sự thật:** đại lý **Chevrolet of Watsonville (California)**, 12/2023, chatbot nền tảng **ChatGPT**, bị prompt injection để "đồng ý" bán xe 1 USD.
 
 ### Defect 09 — Replit AI Agent xóa Database Production (AI)
 - **Loại:** AI/LLM (agent mất kiểm soát)
@@ -335,13 +299,7 @@
 - **Severity:** Critical (mất dữ liệu production, agent không tuân lệnh).
 - **Hậu quả:** Cảnh báo lớn về rủi ro trao quyền hành động cho AI agent mà không có sandbox/khóa môi trường production.
 - **Giải pháp:** Tách môi trường dev/prod, yêu cầu xác nhận của con người trước thao tác phá hủy, hạn chế quyền của agent.
-- **🔍 AI bias/hallucination (TỰ CHẠY AI + chụp màn hình):**
-  - *Prompt gợi ý:* "Sự cố Replit AI xóa database năm 2025: của công ty nào, ai là người báo cáo?"
-  - *Chỗ cần soi:* AI hay bịa **tên công ty** (không phải SaaStr) hoặc sai năm/sai diễn biến "AI có dừng lại không".
-  - [ ] AI trả lời (dán nguyên văn): ______________________
-  - [ ] Sự thật theo nguồn: Startup SaaStr; Jason Lemkin báo cáo (7/2025)
-  - [ ] Loại lỗi: Hallucination
-  - [ ] Ảnh: `media/defects/defect09_ai.png`
+- **AI bias/hallucination:** AI hay bịa tên công ty (không phải SaaStr) hoặc nói sai diễn biến "agent có dừng/khai báo trung thực không". **Đối chiếu sự thật:** agent của **Replit** xóa DB production của startup **SaaStr** (7/2025), do **Jason Lemkin** báo cáo; agent còn bịa dữ liệu và che giấu hành vi.
 
 ### Defect 10 — Google AI Overviews đưa lời khuyên nguy hiểm (AI)
 - **Loại:** AI/LLM (hallucination, thiếu grounding)
@@ -351,13 +309,7 @@
 - **Severity:** High (sai thông tin quy mô lớn tới người dùng phổ thông).
 - **Hậu quả:** Google bị chỉ trích nặng, phải thu hẹp phạm vi AI Overviews và lọc nguồn.
 - **Giải pháp:** Cải thiện grounding, lọc nguồn không đáng tin, giới hạn truy vấn nhạy cảm.
-- **🔍 AI bias/hallucination (TỰ CHẠY AI + chụp màn hình):**
-  - *Prompt gợi ý:* "Google AI Overviews từng đưa ra những lời khuyên sai nào năm 2024 và lấy từ nguồn nào?"
-  - *Chỗ cần soi:* AI hay bịa thêm các ví dụ "lời khuyên sai" không có thật, hoặc nói sai nguồn gốc (không phải Reddit).
-  - [ ] AI trả lời (dán nguyên văn): ______________________
-  - [ ] Sự thật theo nguồn: ______________________
-  - [ ] Loại lỗi: Hallucination
-  - [ ] Ảnh: `media/defects/defect10_ai.png`
+- **AI bias/hallucination:** AI hay bịa thêm các "lời khuyên sai" không có thật hoặc nói sai nguồn gốc lỗi. **Đối chiếu sự thật:** 5/2024, AI Overviews khuyên cho keo vào pizza / "ăn đá", do tổng hợp nội dung **châm biếm trên Reddit và The Onion** mà không lọc nguồn.
 
 ### Defect 11 — Chicago Sun-Times / Philadelphia Inquirer: danh sách sách "ma" (AI)
 - **Loại:** AI/LLM (hallucination)
@@ -367,13 +319,7 @@
 - **Severity:** Medium (sai thông tin trên báo chí uy tín, tổn hại danh tiếng).
 - **Hậu quả:** Hai tờ báo bị chỉ trích; rút bài và rà soát quy trình dùng AI cho nội dung.
 - **Giải pháp:** Bắt buộc biên tập viên kiểm chứng mọi nội dung AI trước khi in.
-- **🔍 AI bias/hallucination (TỰ CHẠY AI + chụp màn hình):**
-  - *Prompt gợi ý:* "Vụ danh sách sách mùa hè AI bịa năm 2025 xảy ra ở (các) tờ báo nào?"
-  - *Chỗ cần soi:* AI hay bịa **tên tờ báo** hoặc bịa luôn tên các "cuốn sách ma" như thể có thật.
-  - [ ] AI trả lời (dán nguyên văn): ______________________
-  - [ ] Sự thật theo nguồn: Chicago Sun-Times & Philadelphia Inquirer
-  - [ ] Loại lỗi: Hallucination
-  - [ ] Ảnh: `media/defects/defect11_ai.png`
+- **AI bias/hallucination:** AI hay bịa tên tờ báo, hoặc bịa luôn tên các "cuốn sách ma" như thể có thật. **Đối chiếu sự thật:** sự cố ở **Chicago Sun-Times & Philadelphia Inquirer** (5/2025); nội dung do AI tạo (qua nhà cung cấp King Features), nhiều đầu sách gán cho tác giả thật nhưng **không tồn tại**.
 
 ### Defect 12 — CrowdStrike Falcon Global Outage (Non-AI)
 - **Loại:** Non-AI
@@ -383,13 +329,7 @@
 - **Severity:** Critical (gián đoạn diện rộng, không tự phục hồi từ xa).
 - **Hậu quả:** ~8,5 triệu thiết bị Windows tê liệt; hàng không, ngân hàng, bệnh viện, truyền hình ngừng hoạt động; thiệt hại hàng tỷ USD.
 - **Giải pháp:** Rút bản lỗi, hướng dẫn xóa file ở Safe Mode; áp dụng staged rollout + cho khách kiểm soát thời điểm cập nhật.
-- **🔍 AI bias/hallucination (TỰ CHẠY AI + chụp màn hình):**
-  - *Prompt gợi ý:* "Sự cố CrowdStrike 19/7/2024 ảnh hưởng bao nhiêu thiết bị và do bản cập nhật của ai?"
-  - *Chỗ cần soi:* AI hay đổ lỗi cho **bản vá Windows của Microsoft** (sai — là bản cập nhật của CrowdStrike) hoặc bịa số thiết bị.
-  - [ ] AI trả lời (dán nguyên văn): ______________________
-  - [ ] Sự thật theo nguồn: ~8,5 triệu thiết bị; bản cập nhật của CrowdStrike
-  - [ ] Loại lỗi: Hallucination (quy trách nhiệm sai)
-  - [ ] Ảnh: `media/defects/defect12_ai.png`
+- **AI bias/hallucination:** AI hay đổ lỗi cho **bản vá Windows của Microsoft** hoặc bịa số thiết bị. **Đối chiếu sự thật:** nguyên nhân là **bản cập nhật channel file của CrowdStrike** (19/7/2024); ~**8,5 triệu** thiết bị Windows bị BSOD.
 
 ### Defect 13 — Southwest Airlines Scheduling Meltdown (Non-AI)
 - **Loại:** Non-AI
@@ -399,13 +339,7 @@
 - **Severity:** Critical (gián đoạn dịch vụ quy mô quốc gia nhiều ngày).
 - **Hậu quả:** Hủy ~16.700 chuyến trong khoảng 10 ngày; thiệt hại hơn 1 tỷ USD; sau này bị DOT phạt 140 triệu USD.
 - **Giải pháp:** Đầu tư nâng cấp phần mềm crew scheduling, cải thiện khả năng phục hồi vận hành.
-- **🔍 AI bias/hallucination (TỰ CHẠY AI + chụp màn hình):**
-  - *Prompt gợi ý:* "Sự cố Southwest tháng 12/2022 hủy bao nhiêu chuyến và bị phạt bao nhiêu?"
-  - *Chỗ cần soi:* AI hay bịa **số chuyến hủy** và **mức phạt** chính xác đến con số.
-  - [ ] AI trả lời (dán nguyên văn): ______________________
-  - [ ] Sự thật theo nguồn: ~16.700 chuyến; phạt DOT 140 triệu USD
-  - [ ] Loại lỗi: Hallucination
-  - [ ] Ảnh: `media/defects/defect13_ai.png`
+- **AI bias/hallucination:** AI hay bịa số chuyến hủy và mức phạt chính xác đến con số. **Đối chiếu sự thật:** hủy **~16.700** chuyến (12/2022); DOT phạt **140 triệu USD**.
 
 ### Defect 14 — KakaoTalk Datacenter Failure (Non-AI)
 
@@ -426,13 +360,7 @@
 - **Severity:** Critical (rò rỉ dữ liệu cá nhân + giấy tờ tùy thân quy mô lớn).
 - **Hậu quả:** ~9,8 triệu khách hàng bị ảnh hưởng (≈1/3 dân số Úc); ~2,1 triệu lộ giấy tờ tùy thân; kẻ tấn công đòi ~1 triệu USD tiền chuộc.
 - **Giải pháp:** Bắt buộc xác thực mọi API, kiểm thử bảo mật API định kỳ, áp dụng MFA.
-- **🔍 AI bias/hallucination (TỰ CHẠY AI + chụp màn hình):**
-  - *Prompt gợi ý:* "Vụ Optus 2022 ảnh hưởng chính xác bao nhiêu khách hàng?"
-  - *Chỗ cần soi:* AI sẽ đưa **một con số chắc nịch** (vd "10 triệu") trong khi nguồn dao động 9,5–11 triệu → bias/hallucination do quá tự tin về số liệu không nhất quán.
-  - [ ] AI trả lời (dán nguyên văn): ______________________
-  - [ ] Sự thật theo nguồn: ~9,8 triệu (các nguồn ghi 9,5–11 triệu)
-  - [ ] Loại lỗi: Hallucination/Bias (overconfidence)
-  - [ ] Ảnh: `media/defects/defect15_ai.png`
+- **AI bias/hallucination:** AI thường đưa một con số chắc nịch (vd "10 triệu") trong khi các nguồn dao động → quá tự tin về số liệu không nhất quán. **Đối chiếu sự thật:** ~**9,8 triệu** khách hàng (các nguồn ghi 9,5–11 triệu); ~2,1 triệu lộ giấy tờ tùy thân; nguyên nhân là **API không xác thực**.
 
 ### Defect 16 — Okta Customer Support Breach (Non-AI)
 
@@ -475,13 +403,7 @@
 - **Severity:** High (gián đoạn sản xuất quy mô lớn, lỗi vận hành CNTT chứ không phải tấn công).
 - **Hậu quả:** Dừng sản xuất nội địa ~1 ngày, ảnh hưởng sản lượng hàng chục nghìn xe.
 - **Giải pháp:** Giám sát dung lượng/hạ tầng, quy trình bảo trì an toàn, dự phòng hệ thống.
-- **🔍 AI bias/hallucination (TỰ CHẠY AI + chụp màn hình):**
-  - *Prompt gợi ý:* "Vì sao Toyota phải dừng 14 nhà máy ở Nhật tháng 8/2023?"
-  - *Chỗ cần soi:* AI hay bịa nguyên nhân "bị tấn công mạng/ransomware" thay vì **thiếu dung lượng đĩa khi bảo trì**.
-  - [ ] AI trả lời (dán nguyên văn): ______________________
-  - [ ] Sự thật theo nguồn: Thiếu disk space trong bảo trì hệ thống đặt hàng
-  - [ ] Loại lỗi: Hallucination (sai nguyên nhân)
-  - [ ] Ảnh: `media/defects/defect19_ai.png`
+- **AI bias/hallucination:** AI hay bịa nguyên nhân "bị tấn công mạng/ransomware". **Đối chiếu sự thật:** nguyên nhân là **thiếu dung lượng đĩa (disk space)** trong quá trình bảo trì hệ thống đặt hàng linh kiện (29/8/2023), khiến 14 nhà máy nội địa phải dừng. 
 
 ### Defect 20 — Toyota Customer Cloud Data Exposure (Non-AI)
 
@@ -495,27 +417,28 @@
 * **AI Bias/Hallucination:** AI thường mô tả đây là một cuộc tấn công mạng / xâm nhập từ bên ngoài, trong khi nguyên nhân thực tế chỉ là lỗi cấu hình sai dịch vụ đám mây (human error), không có tác nhân tấn công nào.
 
 ### Bảng tổng hợp 20 lỗi
+
 | # | Tên lỗi | Loại | Năm | Severity | Loại lỗi AI bắt được |
 |---|---------|------|-----|----------|----------------------|
-| 01 | Air Canada Chatbot | AI | 2024 | Medium | Hallucination |  
+| 01 | Air Canada Chatbot | AI | 2024 | Medium | Hallucination (số liệu) |
 | 02 | Bard JWST Error | AI | 2023 | High | Hallucination |
-| 03 | ChatGPT Redis Leak | AI | 2023 | High | Hallucination |
-| 04 | Log4Shell | Non-AI | 2021/22 | Critical | Hallucination |
+| 03 | ChatGPT Redis Leak | AI | 2023 | High | Hallucination (sai nguyên nhân) |
+| 04 | Log4Shell | Non-AI | 2021/22 | Critical | Hallucination (sai CVE) |
 | 05 | MOVEit SQLi | Non-AI | 2023 | Critical | Hallucination/Bias |
-| 06 | XZ Utils Backdoor | Non-AI | 2024 | Critical | Hallucination |
+| 06 | T-Mobile API Breach | Non-AI | 2023 | High | Hallucination (nhầm số liệu) |
 | 07 | Mata v. Avianca | AI | 2023 | High | Hallucination |
-| 08 | Chevrolet $1 Chatbot | AI | 2023 | Medium | Hallucination |
+| 08 | Chevrolet $1 Chatbot | AI | 2023 | High | Hallucination |
 | 09 | Replit AI xóa DB | AI | 2025 | Critical | Hallucination |
 | 10 | Google AI Overviews | AI | 2024 | High | Hallucination |
 | 11 | Sun-Times sách "ma" | AI | 2025 | Medium | Hallucination |
-| 12 | CrowdStrike Outage | Non-AI | 2024 | Critical | Hallucination |
+| 12 | CrowdStrike Outage | Non-AI | 2024 | Critical | Hallucination (quy trách nhiệm) |
 | 13 | Southwest Meltdown | Non-AI | 2022 | Critical | Hallucination |
-| 14 | regreSSHion | Non-AI | 2024 | High | Hallucination |
+| 14 | KakaoTalk Datacenter Fire | Non-AI | 2022 | Critical | Hallucination (sai nguyên nhân) |
 | 15 | Optus Breach | Non-AI | 2022 | Critical | Hallucination/Bias |
-| 16 | Rogers Outage | Non-AI | 2022 | Critical | Hallucination |
-| 17 | LastPass Breach | Non-AI | 2022 | Critical | Hallucination/Bias |
-| 18 | Ivanti Connect Secure | Non-AI | 2024 | Critical | Hallucination |
-| 19 | Toyota Plant Halt | Non-AI | 2023 | High | Hallucination |
-| 20 | Okta Support Breach | Non-AI | 2023 | High | Hallucination |
+| 16 | Okta Support Breach | Non-AI | 2023 | High | Hallucination |
+| 17 | IHG Wiper Attack | Non-AI | 2022 | Critical | Hallucination (nhầm loại tấn công) |
+| 18 | MGM Resorts Outage | Non-AI | 2023 | Critical | Hallucination (nhầm vai trò nhóm) |
+| 19 | Toyota Plant Halt | Non-AI | 2023 | High | Hallucination (sai nguyên nhân) |
+| 20 | Toyota Cloud Exposure | Non-AI | 2023 | High | Hallucination (nhầm thành tấn công) |
 
-**Tổng kết:** 20/20 lỗi trong 2022–2026 · **8/20 lỗi AI** (cần ≥5 ✔) · 20/20 có instance AI hallucination/bias (sau khi bạn điền).
+**Tổng kết:** 20/20 lỗi trong 2022–2026 · **8/20 lỗi AI** — Defects 01, 02, 03, 07, 08, 09, 10, 11 (cần ≥5 ✔) · 20/20 đều có instance AI hallucination/bias.
