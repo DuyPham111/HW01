@@ -442,3 +442,27 @@
 | 20 | Toyota Cloud Exposure | Non-AI | 2023 | High | Hallucination (nhầm thành tấn công) |
 
 **Tổng kết:** 20/20 lỗi trong 2022–2026 · **8/20 lỗi AI** — Defects 01, 02, 03, 07, 08, 09, 10, 11 (cần ≥5 ✔) · 20/20 đều có instance AI hallucination/bias.
+
+---
+## REQUIREMENT 3: Test Cases for One Physical Product
+
+### 3.1 Thông tin thiết bị & khai báo
+
+| Trường | Thông tin |
+|--------|-----------|
+| **Loại thiết bị** | Quạt Lờ (Drum Fan / Wall Fan) |
+| **Hãng sản xuất** | Công ty TNHH Tân Tiến SENKO |
+| **Model** | L1638 |
+| **Xuất xứ** | Việt Nam |
+| **Tháng / Năm sản xuất** | 09/2024 |
+| **Số lô sản xuất (Lô SX)** | 1**XX**9 |
+| **Công suất** | 47W — 220V / 50Hz |
+| **Đường kính cánh** | 39 cm — 120 nan — 2 vòng giữa |
+| **Nhiệt độ cuộn dây tối đa** | 70°C |
+| **Chứng nhận** | QUACERT 0028-22 · ISO 9001:2015 · Thương hiệu Quốc gia |
+| **Tiêu chuẩn áp dụng** | TCVN 5699-2-80:2007 / IEC 60335-2-80:2005 |
+| **Bảo hành** | Động cơ 24 tháng |
+
+### Ảnh xác minh thiết bị
+
+![Quạt Lờ Senko L1638 + Thẻ SV 23127183](../media/device+studentid.jpg)
