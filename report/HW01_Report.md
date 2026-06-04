@@ -1,4 +1,4 @@
-# REPORT: HW01 – QA/QC Jobs · 20 Defects · Test a Physical Product
+﻿# REPORT: HW01 – QA/QC Jobs · 20 Defects · Test a Physical Product
 
 * **Course:** CS423 - CSC15003 - Software Testing (AI-augmented · 2026) [HW01-AI]
 * **Student Name:** Phạm Vũ Ngọc Duy
@@ -450,7 +450,7 @@
 
 | Trường | Thông tin |
 |--------|-----------|
-| **Loại thiết bị** | Quạt Lờ (Drum Fan / Wall Fan) |
+| **Loại thiết bị** | Quạt Lở (Drum Fan / Wall Fan) |
 | **Hãng sản xuất** | Công ty TNHH Tân Tiến SENKO |
 | **Model** | L1638 |
 | **Xuất xứ** | Việt Nam |
@@ -465,11 +465,11 @@
 
 #### Ảnh xác minh thiết bị
 
-![Quạt Lờ Senko L1638 + Thẻ SV 23127183](../media/device+studentid.jpg)
+![Quạt Lở Senko L1638 + Thẻ SV 23127183](../media/device+studentid.jpg)
 
-### 3.2 Bảng 15 Test Case — Quạt Lờ Senko L1638
+### 3.2 Bảng 15 Test Case — Quạt Lở Senko L1638
 
-> **Thiết bị:** Quạt Lờ Senko L1638 · 39cm · 47W · 220V/50Hz · Lồng 120 nan  
+> **Thiết bị:** Quạt Lở Senko L1638 · 39cm · 47W · 220V/50Hz · Lồng 120 nan  
 > **Ghi chú:** TC01–TC12 do AI hỗ trợ thiết kế (Claude Sonnet 4.6 · 14:30 04/06/2026). TC13–TC15 do sinh viên tự thiết kế (edge case AI bỏ sót — xem mục 3.3).  
 > **(Video) Video:** Thực thi và quay video cho TC01, TC03,TC02, TC05, TC09 (≥5 video bắt buộc).
 
@@ -482,7 +482,7 @@
 | **TC03** (Video) | Kiểm tra Tốc độ 3 (cao nhất — full load 47W) đạt lưu lượng gió tối đa | Quạt đang chạy ở Tốc 2 | 1. Chuyển Tốc 2 → Tốc 3. 2. Đặt tờ giấy A4 cách mặt trước quạt 1m — quan sát rung. 3. Sau 30 giây, chạm nhẹ tay vào vỏ ngoài motor. | Luồng gió mạnh nhất — tờ giấy rung liên tục ở 1m. Vỏ motor ấm nhưng chịu được khi chạm (không bỏng). Không có mùi nhựa/khét. | PASS: Quạt quay nhanh, ổn định nhưng có tiếng rè và không gặp vấn đề gì. | PASS |
 | **TC04** | Kiểm tra chuyển tốc độ tuần tự 1→2→3→Off | Quạt đang ở Tốc 1 | 1. Tốc 1 → Tốc 2, chờ 5 giây. 2. Tốc 2 → Tốc 3, chờ 5 giây. 3. Tốc 3 → Off. 4. Quan sát phản hồi ở mỗi bước. | Mỗi bước chuyển mượt, không giật, quạt phản hồi ngay (<2 giây). Tốc độ tăng đều qua mỗi mức. Off dừng hẳn. | PASS: Quạt chuyển bình thường nhưng ở mỗi lần chuyển có chút giật nhẹ.| PASS |
 | **TC05** (Video) | Kiểm tra dừng an toàn khi tắt đột ngột từ Tốc 3 | Quạt đang chạy Tốc 3 đủ 5 phút | 1. Từ Tốc 3, tắt quạt ngay lập tức (Off). 2. Quan sát cánh quạt dừng dần. 3. Nghe tiếng động lúc cánh dừng. 4. Ngửi kiểm tra mùi. | Cánh quạt dừng dần tự nhiên, không phanh đột ngột. Không có tiếng cọ/va chạm cánh vào lồng. Không có mùi khét hay khói. |PAS: Quạt dừng chậm dần và không gặp vấn đề gì | PASS |
-| **TC06** | Kiểm tra ổn định nhiệt sau 30 phút vận hành liên tục (giới hạn cuộn dây 70°C) | Quạt Tốc 3, phòng thông thoáng bình thường ~30°C | 1. Bật Tốc 3. 2. Để chạy liên tục 30 phút không ngắt. 3. Sau 30 phút: chạm vào vỏ motor, nghe tiếng quạt, kiểm tra tốc độ cánh có thay đổi không. | Vỏ motor ấm nhưng không bỏng tay. Tốc độ và luồng gió không giảm sau 30 phút. Tiếng motor đều và ổn định. Không có mùi nhựa cháy. | PASS: Motor chỉ ấm và vẫn ổn định không gặp trường hợp gì | PASS |
+| **TC06** | Kiểm tra ổn định nhiệt sau 10 phút vận hành liên tục (giới hạn cuộn dây 70°C) | Quạt Tốc 3, phòng thông thoáng bình thường ~30°C | 1. Bật Tốc 3. 2. Để chạy liên tục 30 phút không ngắt. 3. Sau 30 phút: chạm vào vỏ motor, nghe tiếng quạt, kiểm tra tốc độ cánh có thay đổi không. | Vỏ motor ấm nhưng không bỏng tay. Tốc độ và luồng gió không giảm sau 30 phút. Tiếng motor đều và ổn định. Không có mùi nhựa cháy. | PASS: Motor chỉ ấm và vẫn ổn định không gặp trường hợp gì | PASS |
 | **TC07** | Kiểm tra độ rung và cân bằng cánh quạt 39cm ở tốc độ cao | Quạt Tốc 3, đặt trên sàn phẳng cứng | 1. Bật Tốc 3. 2. Đặt nhẹ một tờ giấy A4 lên đỉnh vỏ motor — quan sát rung. 3. Quan sát đế quạt có di chuyển trên sàn không. 4. Nhìn ngang cánh quạt kiểm tra lắc. | Tờ giấy rung đều (rung nhẹ do motor bình thường). Đế quạt không di chuyển. Cánh không lắc bất thường. Không có tiếng gõ/cạch theo chu kỳ. | PASS: Quạt ổn định bình thường, chỉ có motor rung nhẹ làm tờ giấy cũng rung theo | PASS |
 | **TC08** | Kiểm tra độ bền công tắc/dây kéo qua 5 lần bật tắt liên tiếp | Quạt đã cắm điện 220V | 1. Bật (Tốc 1) → Tắt, chờ 3 giây. 2. Lặp lại 5 lần liên tiếp, mỗi lần đủ 3 giây. 3. Sau lần thứ 5, bật và để chạy 30 giây kiểm tra hoạt động bình thường. | Tất cả 10 lần đều hoạt động, không có lần nào không phản hồi. Không kẹt cơ cấu. Sau 5 lần quạt vẫn chạy bình thường ở bất kỳ tốc độ. | PASS: Quả vẫn chạy ổn định không gặp trường hợp gì | PASS |
 | **TC09** (Video) | Kiểm tra độ chắc chắn và an toàn lồng bảo vệ 120 nan | Quạt ở trạng thái TẮT (kiểm tra tĩnh, không cần điện) | 1. Dùng tay ấn nhẹ vào nhiều vị trí trên mặt lồng trước và sau. 2. Kiểm tra toàn bộ ốc/kẹp giữ lồng bằng tay — thử vặn nhẹ. 3. Dùng bút bi (đường kính ~8mm) đưa vào mặt lồng — kiểm tra có lọt qua khoảng nan không. | Lồng không biến dạng khi ấn nhẹ. Tất cả ốc/kẹp chắc, không lỏng. Bút bi không lọt qua khoảng nan (đảm bảo không chạm được cánh). | FAIL: Khung quạt lỏng lẻo và dễ dàng làm trật, rơi rớt khung quạt và bút có thể lọt qua khe quạt | FAIL |
@@ -499,14 +499,134 @@
 
 | Video # | TC | Link|
 |---------|-----|------------|
-| Video 1 | TC01 | https://drive.google.com/file/d/1N3f_iNtbg0WQXTUPdvZIWNhpUFvNIoqP/view?usp=drive_link |
-| Video 2 | TC02 | https://drive.google.com/file/d/1ue1HXHxclCLK3Vbnxo4_k_R323EZgJTk/view?usp=drive_link |
-| Video 3 | TC03 | https://drive.google.com/file/d/1gItqKFfN7zU2UCXupzRHmgvddmCnnfDP/view?usp=drive_link |
-| Video 4 | TC05 | https://drive.google.com/file/d/1nAQxMxAp3_idiWexNx1b7F9PSCy3m6TV/view?usp=drive_link |
-| Video 5 | TC09 | https://drive.google.com/file/d/1ZEXCQbDjCWcOl1qPgFNlNYW-ZvmV6dtn/view?usp=drive_link |
+| Video 1 | TC01 | https://youtube.com/shorts/D09RS5iB4sw?feature=share |
+| Video 2 | TC02 | https://youtube.com/shorts/tp0myYutV8Y?feature=share |
+| Video 3 | TC03 | https://youtube.com/shorts/q7_gmibij5I?feature=share |
+| Video 4 | TC05 | https://youtube.com/shorts/keZzYT_w0oU?feature=share |
+| Video 5 | TC09 | https://youtube.com/shorts/-0WfP8YhkKE?feature=share |
 
 ### 3.4 Screenshot of the AI conversation showing the AI did not generate these edge cases, and a written explanation of why the AI missed them.
 ![Screenshot](../media/screenshot_of_the_AI_conversation.png)
 
 - AI thường chi tạo ra các trường hợp test case chức năng bình thường nhưng nó thường bỏ qua các trường hợp của phần cứng. AI không xem xét các trường hợp của nguồn điện và an toàn khi cánh quạt bị kẹt cứng hoặc tắt nghẽn hoặc các trường hợp hao mòn vật lý ngoài đời vì AI thường cho rằng quạt luôn hoạt động bình thường và ổn định.
+
+## AI COLLABORATION PROTOCOL
+
+### AI Critique 
+
+Trong quá trình thực hiện bài tập HW01, tôi nhận thấy rằng các công cụ AI như ChatGPT và Claude có khả năng hỗ trợ rất tốt trong việc tạo khung nội dung ban đầu và tổ chức dữ liệu. Tuy nhiên, chúng vẫn tồn tại nhiều hạn chế đáng kể về tư duy phản biện, khả năng xử lý các tình huống kiểm thử phần cứng thực tế và độ chính xác của thông tin.
+
+Khi yêu cầu AI thiết kế các ca kiểm thử cho Quạt Lở Senko L1638, AI đã tạo được các trường hợp kiểm thử cơ bản liên quan đến các nút chức năng và thao tác thông thường. Tuy nhiên, AI  bỏ qua các trường hợp của phần cứng và an toàn dây điện. Cụ thể, AI không nhận diện được các rủi ro vật lý như kiểm tra độ chắc chắn của dây nguồn quạt hoặc nguy cơ quá tải động cơ khi cánh quạt bị vật cản chặn lại .
+
+Đáng chú ý hơn, AI luôn giả định thiết bị đang ở trạng thái hoạt động hoàn hảo và không tồn tại lỗi sản xuất. Vì vậy, AI không thể dự đoán được các lỗi thực tế xuất hiện trên thiết bị của tôi, bao gồm:
+
+Cơ chế quay của quạt bị hỏng (TC12).
+Lồng quạt thiếu chắc chắn, gây nguy cơ mất an toàn cao (TC09).
+
+Ngoài ra, khi tôi yêu cầu thêm thông tin về vụ việc Defect 07 — Mata v. Avianca thì Claude đã sửa lại nội dung và các nguồn tin vì các link và thông tin ban đầu claude cung cấp cho tôi bị sai và thiếu thông tin nên Claude đã "bịa" ra thông tin và không chính xác, khi tôi yêu cầu link chi tiết thì Claude mới bắt đầu sửa lại thông tin và xóa các thông tin không đúng đi theo nhưng gì có nguồn gốc rõ ràng.
+
+Trải nghiệm này giúp tôi nhận thức rõ một nguyên tắc quan trọng trong kiểm thử phần mềm: vai trò giám sát của con người là không thể thay thế. AI hoạt động dựa trên việc dự đoán thống kê từ dữ liệu huấn luyện chứ không dựa trên sự thật được kiểm chứng bằng thực nghiệm. Đối với kỹ sư QA/QC, việc tin tưởng hoàn toàn vào kết quả do AI tạo ra mà không tiến hành xác minh thực tế và đối chiếu với các tiêu chuẩn chính thức như ISTQB sẽ tiềm ẩn nhiều rủi ro.
+
+Do đó, AI chỉ nên được xem là một công cụ hỗ trợ tạo bản nháp và gợi ý ban đầu, thay vì là nguồn thông tin cuối cùng.
+
+### Mandatory Disclosure 
+
+"The initial draft of the job list, basic software bug descriptions, and standard desktop electric fan test cases was created by Claude and ChatGPT; I reviewed and edited Part 1: I independently searched for the work and helped Claude sumo and transfer the content into file markup, adding the results of 15 test cases and exceptions (TC13, TC14, TC15) to Part 3; Section 2's AI Hallucination spotlight, the ISTQB Mindmap G9.1 audit analysis, and the AI Critique section were written entirely by me. The detailed AI Audit Report is attached as Appendix A. I confirm I did not use AI to generate any artifact listed in the prohibited category."
+
+## SELF-ASSESSMENT & GRADING TEMPLATE
+
+| No. | Criteria | Max Grade | Self-Assessed Grade |
+| :--- | :--- | :---: | :---: |
+| **1** | Job Market 2026+ (10 jobs × 3 pts + AI Impact) | 40 | **40** |
+| **2** | Software Defects 2022–2026 (20 defects) | 20 | **20** |
+| **3** | Physical-product test design (15 TCs + 5 videos) | 25 | **25** |
+| **AI-1** | [AI-02] AI Audit Report (5section) attached | 8 | **8** |
+| **AI-2** | AI Critique 200–300 words + [AI-03] Disclosure attached | 4 | **4** |
+| **AI-3** | [AI-05] Checklist signed + anticheat artifacts | 3 | **3** |
+| | **TOTAL GRADE** | **100** | **100/100** |
+
+## APPENDIX A: [AI-02] AI AUDIT REPORT (5-SECTION TEMPLATE) [HW01-AI]
+
+### Entry 1: ISTQB Process Mindmap Generation (G9.1) 
+
+* **(1) Prompt + Tool:**
+
+  * **Tool:** ChatGPT (GPT-4o)
+  * **Thời gian:** 04/06/2026
+  * **Prompt:** "Hãy tạo mindmap các vai trò QA/QC theo ISTQB bằng PlantUML."
+
+* **(2) Kết quả AI sinh ra:**
+![Mindmap-fail](../media/mindmap-fail.png)
+
+
+* **(3) Kết luận:** **INVALID** 
+
+* **(4) Phân tích lỗi:**
+
+Mindmap do AI sinh ra chứa nhiều lỗi về vai trò và trách nhiệm theo ISTQB Foundation Level:
+
+#### Lỗi 1: Tester → Viết mã nguồn sản phẩm
+
+AI gán nhiệm vụ "Viết mã nguồn sản phẩm" cho Tester.
+
+Theo ISTQB, Tester có trách nhiệm:
+
+* Lập kế hoạch kiểm thử
+* Thiết kế test case
+* Thực hiện kiểm thử
+* Báo cáo lỗi
+
+Việc phát triển mã nguồn thuộc trách nhiệm chính của Developer.
+
+#### Lỗi 2: Developer → Thực hiện kiểm thử hệ thống
+
+AI gán việc "Kiểm thử hệ thống" cho Developer.
+
+Trên thực tế:
+
+* Developer chủ yếu thực hiện Unit Testing.
+* System Testing, Integration Testing và Regression Testing thường do Tester đảm nhận.
+
+Do đó AI đã nhầm lẫn giữa vai trò Developer và Tester.
+
+#### Lỗi 3: Project Manager → Sửa lỗi phần mềm
+
+AI cho rằng Project Manager có nhiệm vụ sửa lỗi.
+
+Theo ISTQB:
+
+* Project Manager quản lý tiến độ, ngân sách và rủi ro dự án.
+* Việc sửa lỗi thuộc trách nhiệm của Developer.
+
+Đây là lỗi phân công trách nhiệm không chính xác.
+
+* **(5) Sinh viên chỉnh sửa:**
+
+Mindmap được sửa lại theo đúng vai trò và trách nhiệm phổ biến trong quy trình kiểm thử phần mềm.
+
+![Mindmap](../media/mindmap.png)
+
+### Entry 2: Electric Desk Fan Test Cases Generation (G9.3) 
+
+* **(1) Prompt + tool:**
+
+* *Công cụ:* Claude
+
+* *Thời gian:* 04/06/2026
+
+* *Yêu cầu:* "Tạo 12 trường hợp kiểm thử chi tiết cho một chiếc quạt điện gia dụng, bao gồm các cột Mục tiêu, Đầu vào, Các bước, Kết quả mong đợi."
+
+* **(2) Đầu ra của AI:** Đã tạo 12 trường hợp chức năng tương ứng với các nút tiêu chuẩn, tắt nguồn, chuyển đổi tốc độ và kiểm tra an toàn cơ bản của quạt. Không có trường hợp kiểm tra an toàn nào về tâm trọng lực vật lý, nhấp nháy điện hoặc tắc nghẽn vật lý được tạo ra.
+
+* **(3) Kết luận:** **CHƯA HOÀN THÀNH** [HW01-AI]
+* **(4) Lý do:** AI đã không xác định được các thuộc tính vật lý và cơ học quan trọng của việc kiểm thử phần cứng. Theo các kỹ thuật thiết kế kiểm thử tiêu chuẩn ISTQB, các giá trị biên phải bao gồm các biến môi trường và vật lý (chẳng hạn như độ ổn định bề mặt nghiêng và tắc nghẽn cánh quạt vật lý). Ngoài ra, AI giả định thiết bị được sản xuất hoàn hảo, hoàn toàn không đề cập đến rủi ro thiếu lưới tản nhiệt phía trước, lỗi khởi động động cơ hoặc cơ chế dao động bị hỏng.
+
+* **(5) Sửa lỗi của sinh viên:** Giữ lại 12 trường hợp chức năng, loại bỏ hoàn toàn các bản sao yếu do AI tạo ra và tự tay viết 3 trường hợp ngoại lệ vật lý mạnh mẽ (TC13, TC14, TC15). Hơn nữa, tôi đã điều chỉnh kết quả thực tế của 5 trường hợp thử nghiệm đã thực hiện (TC06, TC08) và trường hợp an toàn (TC09) để ghi lại các lỗi phần cứng vật lý thực tế được phát hiện trong quá trình thực hiện thử nghiệm thủ công.
+---
+
+## APPENDIX B: GIT COMMIT LOG [HW01-AI]
+
+
+
+---
 
