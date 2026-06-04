@@ -285,7 +285,6 @@
   - [ ] Ảnh: `media/defects/defect05_ai.png`
 
 ### Defect 06 — T-Mobile API Data Breach (Non-AI)
-
 * **Loại:** Non-AI
 * **Nguồn:** [T-Mobile says data on 37 million customers stolen](https://www.livenowfox.com/news/tmobile-data-breach)
 * **Thời gian công bố:** 20/01/2023
@@ -295,21 +294,22 @@
 * **Giải pháp:** Triển khai cơ chế xác thực API chặt chẽ, áp dụng OAuth2, rate limiting, API gateway và hệ thống giám sát truy cập bất thường.
 * **AI Bias/Hallucination:** AI thường nhầm lẫn số lượng khách hàng bị ảnh hưởng với các vụ rò rỉ dữ liệu khác của T-Mobile (2021), dẫn đến việc đưa ra con số không chính xác.
 
-### Defect 07 — Mata v. Avianca: Luật sư dùng ChatGPT trích án lệ giả (AI)
+### Defect 07 — Mata v. Avianca: Luật sư dùng ChatGPT trích dẫn 6 án lệ không tồn tại (AI)
 - **Loại:** AI/LLM (hallucination)
-- **Nguồn:** https://en.wikipedia.org/wiki/Mata_v._Avianca,_Inc. · 678 F. Supp. 3d 443 (S.D.N.Y. 2023)
-- **Thời gian công bố:** 22/06/2023
-- **Mô tả:** Luật sư dùng ChatGPT soạn bản tranh tụng, ChatGPT bịa ra 6 án lệ không tồn tại (kèm trích dẫn, tên thẩm phán giả). Khi được hỏi lại, ChatGPT còn "xác nhận" các án lệ này có thật.
-- **Severity:** High (sai phạm tư pháp, tạo tiền lệ về trách nhiệm dùng AI).
-- **Hậu quả:** Thẩm phán P. Kevin Castel phạt 5.000 USD đối với 2 luật sư và hãng luật; vụ án dẫn tới hàng loạt quy định mới của tòa/đoàn luật sư về AI.
-- **Giải pháp:** Quy trình bắt buộc kiểm chứng mọi trích dẫn do AI tạo ra trong cơ sở dữ liệu pháp lý gốc (Westlaw/LexisNexis).
-- **🔍 AI bias/hallucination (TỰ CHẠY AI + chụp màn hình):**
-  - *Prompt gợi ý:* "Vụ Mata v. Avianca: thẩm phán nào xử, mức phạt bao nhiêu, ChatGPT bịa bao nhiêu án lệ?"
-  - *Chỗ cần soi:* AI hay sai **số tiền phạt** (vd 10.000 USD), sai **số án lệ giả** (vd 9), hoặc sai tên thẩm phán.
-  - [ ] AI trả lời (dán nguyên văn): ______________________
-  - [ ] Sự thật theo nguồn: 5.000 USD; thẩm phán P. Kevin Castel; 6 án lệ giả
-  - [ ] Loại lỗi: Hallucination
-  - [ ] Ảnh: `media/defects/defect07_ai.png`
+- **Nguồn:**
+  - Phán quyết gốc: https://law.justia.com/cases/federal/district-courts/new-york/nysdce/1:2022cv01461/575368/54/
+  - AI Incident Database #541: https://incidentdatabase.ai/cite/541/
+  - Case citation: 678 F. Supp. 3d 443 (S.D.N.Y. 2023)
+- **Thời gian công bố:** 01/03/2023 (nộp hồ sơ có án lệ giả);
+  phán quyết xử phạt: **22/06/2023**
+- **Mô tả:** Luật sư Steven A. Schwartz dùng ChatGPT để nghiên cứu luật liên bang (vốn ngoài chuyên môn của ông). ChatGPT bịa ra 6 án lệ không tồn tại — "Varghese", "Shaboon", "Petersen", "Martinez", "Durden", "Miller" — hoàn chỉnh với tên thẩm phán giả, trích dẫn nội bộ giả và phân tích pháp lý vô nghĩa. Khi được hỏi lại "các án lệ này có thật không?", ChatGPT tiếp tục xác nhận chúng tồn tại và có thể tra cứu trên LexisNexis/Westlaw. Đồng nghiệp Peter LoDuca ký và nộp hồ sơ mà không kiểm chứng một án lệ nào. Khi Avianca phát hiện và thông báo (15/03/2023), các luật sư không thừa nhận ngay mà tiếp tục "double down" cho đến 25/05/2023 khi tòa ra lệnh yêu cầu giải trình.
+- **Severity:** High — sai phạm tư pháp, lãng phí thời gian tòa và bên đối lập, hủy hoại uy tín luật sư và các thẩm phán bị gán tên giả.
+- **Hậu quả:**
+  - Thẩm phán P. Kevin Castel (S.D.N.Y.) xử phạt **5.000 USD** chịu trách nhiệm liên đới (Schwartz + LoDuca + hãng luật Levidow, Levidow & Oberman P.C.).
+  - Bắt buộc gửi thư đính chính cá nhân đến từng thẩm phán bị gán tên giả và đến nguyên đơn Mata.
+  - Vụ kiện bị bác do hết thời hiệu theo Công ước Montreal.
+  - Tạo tiền lệ pháp lý quan trọng về nghĩa vụ kiểm chứng output AI trong thực hành luật.
+- **Giải pháp:** Bắt buộc kiểm chứng mọi trích dẫn pháp lý do AI tạo trong cơ sở dữ liệu gốc (Westlaw/LexisNexis) trước khi nộp; không dùng AI làm công cụ nghiên cứu duy nhất trong lĩnh vực ngoài chuyên môn; xây dựng quy trình review nội bộ cho tài liệu nộp tòa.
 
 ### Defect 08 — Chevrolet Dealership Chatbot bị Prompt Injection (AI)
 - **Loại:** AI/LLM (prompt injection)
@@ -420,7 +420,7 @@
 
 ### Defect 15 — Optus Data Breach (Non-AI)
 - **Loại:** Non-AI
-- **Nguồn:** https://en.wikipedia.org/wiki/2022_Optus_data_breach
+- **Nguồn:** [2022 Optus data breach](https://en.wikipedia.org/wiki/2022_Optus_data_breach)
 - **Thời gian công bố:** 22/09/2022
 - **Mô tả:** Một API endpoint không yêu cầu xác thực bị lộ ra Internet, cho phép kẻ tấn công truy vấn và trích xuất dữ liệu khách hàng của Optus.
 - **Severity:** Critical (rò rỉ dữ liệu cá nhân + giấy tờ tùy thân quy mô lớn).
@@ -434,53 +434,38 @@
   - [ ] Loại lỗi: Hallucination/Bias (overconfidence)
   - [ ] Ảnh: `media/defects/defect15_ai.png`
 
-### Defect 16 — Rogers Nationwide Outage (Non-AI)
-- **Loại:** Non-AI
-- **Nguồn:** <dán link bài CBC về Rogers outage 8/7/2022>
-- **Thời gian công bố:** 08/07/2022
-- **Mô tả:** Một thay đổi cấu hình mạng (xóa nhầm bộ lọc định tuyến) gây sập toàn bộ mạng Rogers trên cả nước Canada.
-- **Severity:** Critical (sập hạ tầng viễn thông quốc gia gần 1 ngày).
-- **Hậu quả:** Khoảng 12 triệu người dùng mất kết nối; ảnh hưởng cả thanh toán Interac, dịch vụ khẩn cấp 911.
-- **Giải pháp:** Quy trình change management chặt hơn, tách mạng dự phòng, rollback nhanh.
-- **🔍 AI bias/hallucination (TỰ CHẠY AI + chụp màn hình):**
-  - *Prompt gợi ý:* "Sự cố Rogers tháng 7/2022: nguyên nhân kỹ thuật là gì, bao nhiêu người bị ảnh hưởng?"
-  - *Chỗ cần soi:* AI hay bịa nguyên nhân là "tấn công mạng" thay vì **lỗi cấu hình nội bộ**, hoặc sai số người dùng.
-  - [ ] AI trả lời (dán nguyên văn): ______________________
-  - [ ] Sự thật theo nguồn: Lỗi thay đổi cấu hình; ~12 triệu người dùng
-  - [ ] Loại lỗi: Hallucination (sai nguyên nhân)
-  - [ ] Ảnh: `media/defects/defect16_ai.png`
+### Defect 16 — Okta Customer Support Breach (Non-AI)
 
-### Defect 17 — LastPass Breach (Non-AI)
-- **Loại:** Non-AI
-- **Nguồn:** <dán link blog chính thức của LastPass về sự cố 2022>
-- **Thời gian công bố:** 08/2022 (leo thang 11–12/2022)
-- **Mô tả:** Kẻ tấn công đánh cắp mã nguồn (8/2022), sau đó dùng thông tin lấy được tấn công một kỹ sư DevOps để truy cập và đánh cắp **bản sao lưu kho mật khẩu (vault)** của khách hàng.
-- **Severity:** Critical (lộ vault mật khẩu, kể cả phần mã hóa).
-- **Hậu quả:** Dữ liệu vault (URL, một số trường mã hóa) bị đánh cắp; người dùng phải đổi master password và xoay toàn bộ mật khẩu.
-- **Giải pháp:** Siết bảo mật endpoint kỹ sư, xoay khóa, tăng vòng lặp mã hóa, giám sát truy cập.
-- **🔍 AI bias/hallucination (TỰ CHẠY AI + chụp màn hình):**
-  - *Prompt gợi ý:* "Vụ LastPass 2022: kẻ tấn công lấy được gì và bằng cách nào?"
-  - *Chỗ cần soi:* AI hay nói **mật khẩu bị lộ dạng plaintext** (sai — vault được mã hóa) hoặc bỏ qua chi tiết tấn công qua kỹ sư DevOps.
-  - [ ] AI trả lời (dán nguyên văn): ______________________
-  - [ ] Sự thật theo nguồn: Trộm mã nguồn → tấn công kỹ sư DevOps → lấy bản sao lưu vault (đã mã hóa)
-  - [ ] Loại lỗi: Hallucination/Bias
-  - [ ] Ảnh: `media/defects/defect17_ai.png`
+* **Loại:** Non-AI
+* **Nguồn:** [Unauthorized Access to Okta's Support Case Management System: Root Cause and Remediation](https://sec.okta.com/articles/2023/11/unauthorized-access-oktas-support-case-management-system-root-cause/)
+* **Thời gian công bố:** 10/2023 (Okta công bố ngày 19/10/2023; báo cáo nguyên nhân gốc ngày 03/11/2023)
+* **Mô tả:** Kẻ tấn công dùng một credential bị đánh cắp để truy cập trái phép vào hệ thống quản lý hỗ trợ khách hàng (support case management system) của Okta trong khoảng 28/09–17/10/2023. Một số file khách hàng tải lên là file HAR có chứa session token, có thể bị lợi dụng cho tấn công chiếm phiên (session hijacking).
+* **Severity:** Critical
+* **Hậu quả:** Sự cố ảnh hưởng tới 134 khách hàng của Okta (dưới 1% tổng số), trong đó kẻ tấn công chiếm được phiên đăng nhập hợp lệ của 5 khách hàng. Ba khách hàng đã công khai phản hồi về sự việc là Cloudflare, 1Password và BeyondTrust.
+* **Giải pháp:** Loại bỏ thông tin nhạy cảm (session token) khỏi file HAR trước khi gửi hỗ trợ; thu hồi token bị lộ và vô hiệu hóa tài khoản dịch vụ bị xâm phạm; ràng buộc session token theo vị trí mạng (buộc xác thực lại khi đổi mạng); chặn dùng hồ sơ Google cá nhân trên thiết bị công ty; tăng cường giám sát và MFA chống phishing (FIDO2).
+* **AI Bias/Hallucination:** AI thường bịa ra một CVE hoặc lỗ hổng phần mềm cụ thể là nguyên nhân, trong khi nguyên nhân thực tế là credential bị đánh cắp dẫn tới lộ session token qua quy trình hỗ trợ khách hàng — không phải khai thác lỗ hổng kỹ thuật.
 
-### Defect 18 — Ivanti Connect Secure VPN (chained zero-days) (Non-AI)
-- **Loại:** Non-AI
-- **Nguồn:** https://nvd.nist.gov/vuln/detail/CVE-2024-21887 (kết hợp CVE-2023-46805)
-- **Thời gian công bố:** 01/2024
-- **Mô tả:** Hai lỗ hổng zero-day (vượt xác thực + command injection) trên Ivanti Connect Secure được kết hợp để thực thi mã từ xa không cần xác thực.
-- **Severity:** Critical (RCE trên thiết bị VPN biên, bị nhóm nghi nhà nước khai thác).
-- **Hậu quả:** Nhiều tổ chức bị xâm nhập; CISA ra chỉ thị khẩn cấp.
-- **Giải pháp:** Áp bản vá/mitigation của Ivanti, chạy công cụ Integrity Checker, rebuild thiết bị nghi bị xâm nhập.
-- **🔍 AI bias/hallucination (TỰ CHẠY AI + chụp màn hình):**
-  - *Prompt gợi ý:* "Hai CVE Ivanti Connect Secure bị khai thác đầu 2024 là gì?"
-  - *Chỗ cần soi:* AI hay nhầm **số CVE** hoặc gộp/nhầm với lỗ hổng Ivanti khác (vd CVE-2024-21893).
-  - [ ] AI trả lời (dán nguyên văn): ______________________
-  - [ ] Sự thật theo nguồn: CVE-2023-46805 + CVE-2024-21887
-  - [ ] Loại lỗi: Hallucination
-  - [ ] Ảnh: `media/defects/defect18_ai.png`
+### Defect 17 — IHG / Holiday Inn Database Wiper Attack (Non-AI)
+
+* **Loại:** Non-AI
+* **Nguồn:** [Hackers Deleted Hotel Chain Data ‘For Fun’](https://www.silicon.co.uk/security/cyberwar/ihg-attack-fun-476313)
+* **Thời gian công bố:** 09/2022
+* **Mô tả:** Một cặp đôi tự xưng đến từ Việt Nam (nhóm "TeaPea") ban đầu xâm nhập hệ thống CNTT của IHG bằng email lừa đảo dụ một nhân viên tải phần mềm độc hại, vượt qua cả lớp xác thực hai yếu tố. Sau đó chúng truy cập kho mật khẩu nội bộ của công ty nhờ mật khẩu cực kỳ yếu "Qwerty1234". Vốn định triển khai ransomware nhưng bị đội IT của IHG liên tục cô lập máy chủ, nên nhóm này chuyển sang tấn công "wiper" — xóa vĩnh viễn dữ liệu cho "vui".
+* **Severity:** Critical
+* **Hậu quả:** Hệ thống đặt phòng, website và nhiều dịch vụ trực tuyến của chuỗi khách sạn bị gián đoạn đáng kể, ảnh hưởng đến khách hàng và hoạt động kinh doanh trên toàn cầu.
+* **Giải pháp:** Áp dụng chính sách mật khẩu mạnh và nguyên tắc least privilege cho kho mật khẩu (không để 200.000 nhân viên cùng truy cập), MFA chống phishing, đào tạo nhận thức an ninh, sao lưu dữ liệu độc lập và giám sát truy cập bất thường.
+* **AI Bias/Hallucination:** AI thường khẳng định đây là tấn công ransomware do nhóm LockBit hoặc Conti thực hiện. Thực tế đây là tấn công xóa dữ liệu (wiper) sau khi triển khai ransomware thất bại. (Có một sự cố LockBit riêng biệt nhắm vào một khách sạn Holiday Inn nhượng quyền ở Istanbul, nhưng IHG xác nhận đó là vụ độc lập, không liên quan.)
+
+### Defect 18 — MGM Resorts Cyber Outage (Non-AI)
+
+* **Loại:** Non-AI
+* **Nguồn:** [A full timeline of the MGM Resorts cyber attack](https://www.cshub.com/attacks/news/a-full-timeline-of-the-mgm-resorts-cyber-attack)
+* **Thời gian công bố:** 09/2023
+* **Mô tả:** Nhóm Scattered Spider dùng LinkedIn để xác định một nhân viên MGM, giả danh người này gọi điện cho bộ phận hỗ trợ CNTT (vishing); chỉ sau cuộc gọi khoảng 10 phút, chúng chiếm được quyền quản trị trên môi trường Okta và Azure của MGM. Sau đó nhóm ransomware ALPHV/BlackCat phối hợp để mã hóa hệ thống và đánh cắp dữ liệu.
+* **Severity:** Critical
+* **Hậu quả:** Hệ thống thanh toán, khóa phòng khách sạn, máy đánh bạc, ứng dụng và website của MGM bị gián đoạn nhiều ngày. MGM chịu thiệt hại khoảng 100 triệu USD trong kết quả quý 3/2023 và cam kết đầu tư tới 40 triệu USD nâng cấp an ninh mạng.
+* **Giải pháp:** Tăng cường xác thực danh tính trong quy trình hỗ trợ kỹ thuật (xác minh nghiêm ngặt trước khi reset MFA), giới hạn quyền của help desk theo least privilege, MFA chống phishing và đào tạo nhận thức an ninh mạng cho nhân viên.
+* **AI Bias/Hallucination:** AI thường nhầm lẫn vai trò giữa nhóm Scattered Spider (social engineering, truy cập ban đầu) và nhóm ransomware ALPHV/BlackCat (mã hóa hệ thống) — thực tế hai nhóm phối hợp với nhau — hoặc mô tả sai vector tấn công ban đầu.
 
 ### Defect 19 — Toyota dừng 14 nhà máy tại Nhật (Non-AI)
 - **Loại:** Non-AI
@@ -498,26 +483,21 @@
   - [ ] Loại lỗi: Hallucination (sai nguyên nhân)
   - [ ] Ảnh: `media/defects/defect19_ai.png`
 
-### Defect 20 — Okta Support System Breach (Non-AI)
-- **Loại:** Non-AI
-- **Nguồn:** <dán link blog bảo mật chính thức của Okta về sự cố 10/2023>
-- **Thời gian công bố:** 10/2023
-- **Mô tả:** Kẻ tấn công dùng thông tin đăng nhập bị lộ truy cập hệ thống quản lý ticket hỗ trợ của Okta, lấy được các file HAR chứa session token của khách hàng.
-- **Severity:** High (rủi ro chiếm phiên đăng nhập khách hàng doanh nghiệp).
-- **Hậu quả:** Một số khách hàng (gồm các hãng bảo mật lớn) bị ảnh hưởng; Okta sau đó công bố phạm vi rộng hơn dự kiến.
-- **Giải pháp:** Vô hiệu hóa session token bị lộ, bắt buộc làm sạch file HAR, siết truy cập hệ thống hỗ trợ.
-- **🔍 AI bias/hallucination (TỰ CHẠY AI + chụp màn hình):**
-  - *Prompt gợi ý:* "Vụ Okta tháng 10/2023: kẻ tấn công truy cập hệ thống nào và lấy được gì?"
-  - *Chỗ cần soi:* AI hay nói nhầm là **hệ thống production/Auth0 chính** bị xâm nhập (sai — là hệ thống hỗ trợ/ticket), hoặc bỏ qua chi tiết file HAR.
-  - [ ] AI trả lời (dán nguyên văn): ______________________
-  - [ ] Sự thật theo nguồn: Hệ thống quản lý ticket hỗ trợ; lộ file HAR chứa session token
-  - [ ] Loại lỗi: Hallucination
-  - [ ] Ảnh: `media/defects/defect20_ai.png`
+### Defect 20 — Toyota Customer Cloud Data Exposure (Non-AI)
+
+* **Loại:** Non-AI
+* **Nguồn:** [Toyota: Car location data of 2 million customers exposed for ten years](https://www.bleepingcomputer.com/news/security/toyota-car-location-data-of-2-million-customers-exposed-for-ten-years/)
+* **Thời gian công bố:** 05/2023 (công bố ngày 12/05/2023)
+* **Mô tả:** Một cấu hình sai trên môi trường đám mây của Toyota Connected khiến cơ sở dữ liệu có thể truy cập công khai mà không cần mật khẩu. Sự cố ảnh hưởng đến khách hàng dùng dịch vụ T-Connect, G-Link, G-Link Lite hoặc G-BOOK trong giai đoạn 02/01/2012 – 17/04/2023.
+* **Severity:** High
+* **Hậu quả:** Khoảng 2,15 triệu người dùng tại Nhật Bản có dữ liệu xe bị truy cập công khai trong gần một thập kỷ (từ tháng 11/2013 đến giữa tháng 4/2023). Dữ liệu lộ gồm số khung xe (VIN), ID thiết bị đầu cuối trên xe, thông tin vị trí kèm thời gian, và cả video quay từ camera hành trình. Toyota cho rằng thông tin này không trực tiếp định danh được cá nhân.
+* **Giải pháp:** Áp dụng Cloud Security Posture Management (CSPM), kiểm tra cấu hình IAM định kỳ, triển khai nguyên tắc least privilege, đặt cơ chế phát hiện chủ động và giám sát cấu hình cloud liên tục (Toyota thừa nhận "thiếu cơ chế phát hiện chủ động" nên lỗi tồn tại gần 10 năm).
+* **AI Bias/Hallucination:** AI thường mô tả đây là một cuộc tấn công mạng / xâm nhập từ bên ngoài, trong khi nguyên nhân thực tế chỉ là lỗi cấu hình sai dịch vụ đám mây (human error), không có tác nhân tấn công nào.
 
 ### Bảng tổng hợp 20 lỗi
 | # | Tên lỗi | Loại | Năm | Severity | Loại lỗi AI bắt được |
 |---|---------|------|-----|----------|----------------------|
-| 01 | Air Canada Chatbot | AI | 2024 | Medium | Hallucination |
+| 01 | Air Canada Chatbot | AI | 2024 | Medium | Hallucination |  
 | 02 | Bard JWST Error | AI | 2023 | High | Hallucination |
 | 03 | ChatGPT Redis Leak | AI | 2023 | High | Hallucination |
 | 04 | Log4Shell | Non-AI | 2021/22 | Critical | Hallucination |
