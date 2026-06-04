@@ -463,6 +463,50 @@
 | **Tiêu chuẩn áp dụng** | TCVN 5699-2-80:2007 / IEC 60335-2-80:2005 |
 | **Bảo hành** | Động cơ 24 tháng |
 
-### Ảnh xác minh thiết bị
+#### Ảnh xác minh thiết bị
 
 ![Quạt Lờ Senko L1638 + Thẻ SV 23127183](../media/device+studentid.jpg)
+
+### 3.2 Bảng 15 Test Case — Quạt Lờ Senko L1638
+
+> **Thiết bị:** Quạt Lờ Senko L1638 · 39cm · 47W · 220V/50Hz · Lồng 120 nan  
+> **Ghi chú:** TC01–TC12 do AI hỗ trợ thiết kế (Claude Sonnet 4.6 · 14:30 04/06/2026). TC13–TC15 do sinh viên tự thiết kế (edge case AI bỏ sót — xem mục 3.3).  
+> **(Video) Video:** Thực thi và quay video cho TC01, TC03,TC02, TC05, TC09 (≥5 video bắt buộc).
+
+---
+
+| TC# | Objective | Input / Điều kiện | Steps | Expected | Actual | Verdict |
+|-----|-----------|-------------------|-------|----------|--------|---------|
+| **TC01** (Video) | Kiểm tra khởi động bình thường ở Tốc độ 1 | Quạt đã cắm điện 220V, đang ở trạng thái tắt hoàn toàn | 1. Cắm phích điện vào ổ. 2. Bật công tắc/kéo dây → chọn Tốc 1. 3. Quan sát cánh quạt và nghe tiếng động. | Cánh quạt quay đều ở tốc độ thấp, có luồng gió cảm nhận được, không có tiếng cọ sát hay va chạm. Không có mùi khét. |PASS: Quạt quay nhanh và ổn định, không rung lắc. | PASS|
+| **TC02** (Video) | Kiểm tra Tốc độ 2 cho luồng gió mạnh hơn Tốc độ 1 | Quạt đang chạy ổn định ở Tốc 1 | 1. Chuyển từ Tốc 1 → Tốc 2 (bấm nút/kéo dây). 2. Đặt tay cách quạt 50 cm để cảm nhận sự thay đổi luồng gió. 3. Nghe tiếng motor thay đổi. | Tốc độ cánh tăng rõ rệt, luồng gió mạnh hơn Tốc 1, tiếng motor tăng nhẹ nhưng đều. Không có tiếng giật cục khi chuyển. | PASS: Quạt quay nhanh, ổn định.| PASS |
+| **TC03** (Video) | Kiểm tra Tốc độ 3 (cao nhất — full load 47W) đạt lưu lượng gió tối đa | Quạt đang chạy ở Tốc 2 | 1. Chuyển Tốc 2 → Tốc 3. 2. Đặt tờ giấy A4 cách mặt trước quạt 1m — quan sát rung. 3. Sau 30 giây, chạm nhẹ tay vào vỏ ngoài motor. | Luồng gió mạnh nhất — tờ giấy rung liên tục ở 1m. Vỏ motor ấm nhưng chịu được khi chạm (không bỏng). Không có mùi nhựa/khét. | PASS: Quạt quay nhanh, ổn định nhưng có tiếng rè và không gặp vấn đề gì. | PASS |
+| **TC04** | Kiểm tra chuyển tốc độ tuần tự 1→2→3→Off | Quạt đang ở Tốc 1 | 1. Tốc 1 → Tốc 2, chờ 5 giây. 2. Tốc 2 → Tốc 3, chờ 5 giây. 3. Tốc 3 → Off. 4. Quan sát phản hồi ở mỗi bước. | Mỗi bước chuyển mượt, không giật, quạt phản hồi ngay (<2 giây). Tốc độ tăng đều qua mỗi mức. Off dừng hẳn. | PASS: Quạt chuyển bình thường nhưng ở mỗi lần chuyển có chút giật nhẹ.| PASS |
+| **TC05** (Video) | Kiểm tra dừng an toàn khi tắt đột ngột từ Tốc 3 | Quạt đang chạy Tốc 3 đủ 5 phút | 1. Từ Tốc 3, tắt quạt ngay lập tức (Off). 2. Quan sát cánh quạt dừng dần. 3. Nghe tiếng động lúc cánh dừng. 4. Ngửi kiểm tra mùi. | Cánh quạt dừng dần tự nhiên, không phanh đột ngột. Không có tiếng cọ/va chạm cánh vào lồng. Không có mùi khét hay khói. |PAS: Quạt dừng chậm dần và không gặp vấn đề gì | PASS |
+| **TC06** | Kiểm tra ổn định nhiệt sau 30 phút vận hành liên tục (giới hạn cuộn dây 70°C) | Quạt Tốc 3, phòng thông thoáng bình thường ~30°C | 1. Bật Tốc 3. 2. Để chạy liên tục 30 phút không ngắt. 3. Sau 30 phút: chạm vào vỏ motor, nghe tiếng quạt, kiểm tra tốc độ cánh có thay đổi không. | Vỏ motor ấm nhưng không bỏng tay. Tốc độ và luồng gió không giảm sau 30 phút. Tiếng motor đều và ổn định. Không có mùi nhựa cháy. | PASS: Motor chỉ ấm và vẫn ổn định không gặp trường hợp gì | PASS |
+| **TC07** | Kiểm tra độ rung và cân bằng cánh quạt 39cm ở tốc độ cao | Quạt Tốc 3, đặt trên sàn phẳng cứng | 1. Bật Tốc 3. 2. Đặt nhẹ một tờ giấy A4 lên đỉnh vỏ motor — quan sát rung. 3. Quan sát đế quạt có di chuyển trên sàn không. 4. Nhìn ngang cánh quạt kiểm tra lắc. | Tờ giấy rung đều (rung nhẹ do motor bình thường). Đế quạt không di chuyển. Cánh không lắc bất thường. Không có tiếng gõ/cạch theo chu kỳ. | PASS: Quạt ổn định bình thường, chỉ có motor rung nhẹ làm tờ giấy cũng rung theo | PASS |
+| **TC08** | Kiểm tra độ bền công tắc/dây kéo qua 5 lần bật tắt liên tiếp | Quạt đã cắm điện 220V | 1. Bật (Tốc 1) → Tắt, chờ 3 giây. 2. Lặp lại 5 lần liên tiếp, mỗi lần đủ 3 giây. 3. Sau lần thứ 5, bật và để chạy 30 giây kiểm tra hoạt động bình thường. | Tất cả 10 lần đều hoạt động, không có lần nào không phản hồi. Không kẹt cơ cấu. Sau 5 lần quạt vẫn chạy bình thường ở bất kỳ tốc độ. | PASS: Quả vẫn chạy ổn định không gặp trường hợp gì | PASS |
+| **TC09** (Video) | Kiểm tra độ chắc chắn và an toàn lồng bảo vệ 120 nan | Quạt ở trạng thái TẮT (kiểm tra tĩnh, không cần điện) | 1. Dùng tay ấn nhẹ vào nhiều vị trí trên mặt lồng trước và sau. 2. Kiểm tra toàn bộ ốc/kẹp giữ lồng bằng tay — thử vặn nhẹ. 3. Dùng bút bi (đường kính ~8mm) đưa vào mặt lồng — kiểm tra có lọt qua khoảng nan không. | Lồng không biến dạng khi ấn nhẹ. Tất cả ốc/kẹp chắc, không lỏng. Bút bi không lọt qua khoảng nan (đảm bảo không chạm được cánh). | FAIL: Khung quạt lỏng lẻo và dễ dàng làm trật, rơi rớt khung quạt và bút có thể lọt qua khe quạt | FAIL |
+| **TC10** | Kiểm tra tiếng ồn bất thường ở từng mức tốc độ | Phòng yên tĩnh (<40 dB nền), cách quạt 1m | 1. Bật Tốc 1 — nghe 30 giây. 2. Chuyển Tốc 2 — nghe 30 giây. 3. Chuyển Tốc 3 — nghe 30 giây. 4. Ghi nhận bất kỳ tiếng bất thường (cạch, rung kim loại, vo ve không đều). | Tốc 1: tiếng nhỏ đều. Tốc 2: tiếng vừa đều. Tốc 3: tiếng lớn nhất nhưng đều. Không có tiếng cạch, rung kim loại, hay thay đổi đột ngột trong tiếng motor ở mỗi mức. |FAIL: Quạt sau 1 khoảng thời gian xuất hiện tiếng ồn bất thường tiếng "kẽo kẹt" của kim loại | FAIL |
+| **TC11** | Kiểm tra hoạt động khi nguồn điện qua ổ cắm nối dài (dây 5m) | Quạt Tốc 3, cắm qua ổ nối dài 5m thay vì cắm trực tiếp | 1. Cắm quạt vào ổ nối dài 5m. 2. Bật Tốc 3. 3. Chạy  phút. 4. So sánh luồng gió và tiếng motor với khi cắm trực tiếp (bước 5). 5. Tắt, cắm trực tiếp, bật lại Tốc 3 — so sánh. | Quạt hoạt động bình thường qua ổ nối dài. Luồng gió và tiếng motor không khác biệt rõ so với cắm trực tiếp. Không có hiện tượng nhấp nháy hay thay đổi tốc độ đột ngột. | PASS: Quạt vẫn quay bình thường, tốc độ gió không khác biệt hay có hiện tượng gì khác | PASS |
+| **TC12** | Kiểm tra cơ chế quay (tuốc năng) ở các mức tốc độ | Quạt đang chạy Tốc độ 1 | 1. Nhấn nút/kéo cần tuốc năng để quạt quay. 2. Quan sát chuyển động của đầu quạt. | Quạt phải xoay đều trái-phải, không có tiếng động lạ, không bị khựng giữa chừng. |FAIL: Khi bật chế độ quay, motor phát tiếng "cạch" lớn liên tục nhưng đầu quạt đứng yên. Trục truyền động bên trong bị trượt.| FAIL |
+| **TC13** | Kiểm tra khả năng hoạt động khi mất điện và có điện trở lại ngay lập tức (Edge case #1) | Quạt đang chạy ở Tốc 3 | 1. Bật quạt ở Tốc 3. 2. Rút phích điện. 3. Cắm lại trong vòng 1 giây. 4. Quan sát hoạt động của quạt | Quạt tự hoạt động trở lại ở tốc độ trước đó mà không phát sinh tiếng động bất thường hoặc tia lửa điện | PASS: Quạt hoạt động trở lại bình thường và không bị gì cả, tốc độ gió cũng không bị yếu đi | PASS |
+| **TC14** | Kiểm tra an toàn khi cánh quạt có vật cản lúc bật quạt (Edge case #2) | Quạt đang tắt nhưng vẫn cắm điện và chèn cuộn giấy vào giữa cánh quạt | 1. Chèn cuộn giấy mềm vào vị trí ngăn cánh quạt quay. 2. Bật Tốc 1 trong 2–3 giây. 3. Tắt quạt và tháo vật cản | Motor chỉ phát tiếng ù nhẹ, không có khói, tia lửa hoặc mùi khét. Không xảy ra hư hỏng sau khi tháo vật cản | FAIL: Lúc khởi động motor hơi rè nhẹ nhưng sau đó quạt cố gắng chạy  nhưng bị cản bởi cuộn giấy nên phát ra âm thanh và không chạy được | FAIL |
+| **TC15** | Kiểm tra độ chắc chắn của dây nguồn tại vị trí tiếp giáp thân quạt (Edge case #3) | Quạt đã cắm điện nhưng đang tắt | 1. Dùng tay kéo nhẹ dây nguồn tại vị trí đi vào thân quạt 5 lần. 2. Quan sát độ chắc chắn của dây và lớp cách điện | Dây nguồn được cố định chắc chắn, không bị lỏng, không lộ lõi dây điện. | FAIL: Dây nguồn bị lỏng tại điểm nối với thân quạt, lớp bảo vệ bị hở một phần | FAIL |
+
+---
+
+### 3.3 Video Demo Test Case
+
+| Video # | TC | Link|
+|---------|-----|------------|
+| Video 1 | TC01 | https://drive.google.com/file/d/1N3f_iNtbg0WQXTUPdvZIWNhpUFvNIoqP/view?usp=drive_link |
+| Video 2 | TC02 | https://drive.google.com/file/d/1ue1HXHxclCLK3Vbnxo4_k_R323EZgJTk/view?usp=drive_link |
+| Video 3 | TC03 | https://drive.google.com/file/d/1gItqKFfN7zU2UCXupzRHmgvddmCnnfDP/view?usp=drive_link |
+| Video 4 | TC05 | https://drive.google.com/file/d/1nAQxMxAp3_idiWexNx1b7F9PSCy3m6TV/view?usp=drive_link |
+| Video 5 | TC09 | https://drive.google.com/file/d/1ZEXCQbDjCWcOl1qPgFNlNYW-ZvmV6dtn/view?usp=drive_link |
+
+### 3.4 Screenshot of the AI conversation showing the AI did not generate these edge cases, and a written explanation of why the AI missed them.
+![Screenshot](../media/screenshot_of_the_AI_conversation.png)
+
+- AI thường chi tạo ra các trường hợp test case chức năng bình thường nhưng nó thường bỏ qua các trường hợp của phần cứng. AI không xem xét các trường hợp của nguồn điện và an toàn khi cánh quạt bị kẹt cứng hoặc tắt nghẽn hoặc các trường hợp hao mòn vật lý ngoài đời vì AI thường cho rằng quạt luôn hoạt động bình thường và ổn định.
+
