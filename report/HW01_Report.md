@@ -626,6 +626,14 @@ Mindmap được sửa lại theo đúng vai trò và trách nhiệm phổ biế
 
 ## APPENDIX B: GIT COMMIT LOG [HW01-AI]
 
+d7dd5d4 - Pham Duy, 2 minutes ago : Final
+8023b96 - Pham Duy, 71 minutes ago : Complete R3 and AI Critique - Mandatory Disclosure
+7faf339 - Pham Duy, 3 hours ago : R3: add device photo + declaration
+d5eb71a - Pham Duy, 4 hours ago : R2: fix summary table + complete all 20 AI hallucination sections
+b61da19 - Pham Duy, 4 hours ago : R2: complete defect 07 (Mata v. Avianca) + AI hallucination capture
+3c5436b - Pham Duy, 4 hours ago : WIP: req 2 - defect 1- 14
+dd177fc - Pham Duy, 8 hours ago : REQUIREMENT 1 & Media
+31dcd4c - Pham Duy, 14 hours ago : first commit
 
 
 ---
